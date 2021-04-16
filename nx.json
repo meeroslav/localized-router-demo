@@ -1,0 +1,30 @@
+{
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "localized-router-demo",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "localized-router-demo": {
+      "tags": []
+    },
+    "localized-router-demo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["localized-router-demo"]
+    }
+  }
+}
