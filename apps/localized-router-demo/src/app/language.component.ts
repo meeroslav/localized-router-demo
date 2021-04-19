@@ -13,7 +13,7 @@ import { TranslateService } from './translate/translate.service';
     <route [path]="'about' | translateRoute | async">
       <demo-about *routeComponent></demo-about>
     </route>
-    <route path="/" [redirectTo]="'/home' | translateRoute | async"></route>
+    <route path="" [redirectTo]="'home' | translateRoute | async"></route>
   </router>
   `,
 })
