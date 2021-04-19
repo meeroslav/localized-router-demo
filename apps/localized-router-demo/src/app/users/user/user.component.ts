@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'localized-router-demo-user',
+  selector: 'demo-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
