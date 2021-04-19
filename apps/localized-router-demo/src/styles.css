@@ -58,6 +58,10 @@ nav ul {
   padding: 0;
 }
 
+a {
+  border-bottom: 1px solid transparent;
+}
+
 a,
 a:visited,
 a:hover {

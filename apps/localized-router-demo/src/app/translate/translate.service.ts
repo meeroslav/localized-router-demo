@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
 import { LANGUAGES, DEFAULT_LANGUAGE, Resource, TRANSLATION_RESOURCE } from './resource';
 
 @Injectable({
@@ -6,6 +8,8 @@ import { LANGUAGES, DEFAULT_LANGUAGE, Resource, TRANSLATION_RESOURCE } from './r
 })
 export class TranslateService {
   private lang = DEFAULT_LANGUAGE;
+  public langSub = new BehaviorSubject(this.lang);
+  public lang$ = this.langSub.asObservable().pipe(distinctUntilChanged());
   private resources: Record<string, string>;
 
   constructor() {
@@ -21,6 +25,7 @@ export class TranslateService {
   set language(lang: string) {
     if (LANGUAGES.find(l => l.code === lang.toLowerCase())) {
       this.lang = lang.toLowerCase();
+      this.langSub.next(this.lang);
     }
   }
 
