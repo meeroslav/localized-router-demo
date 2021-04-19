@@ -33,10 +33,6 @@ export class TranslateRoutePipe implements PipeTransform, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.dispose();
-  }
-
-  private dispose() {
     this._sub.unsubscribe();
   }
 
