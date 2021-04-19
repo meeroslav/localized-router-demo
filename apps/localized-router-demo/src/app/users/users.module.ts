@@ -14,5 +14,5 @@ import { ComponentRouterModule, ModuleWithRoute } from '@angular-component/route
   ]
 })
 export class UsersModule implements ModuleWithRoute {
-  routeComponent = UsersComponent
+  routeComponent = UsersComponent;
 }
