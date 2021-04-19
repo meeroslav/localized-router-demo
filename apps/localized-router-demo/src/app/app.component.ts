@@ -14,8 +14,6 @@ export class AppComponent {
     this.languages = this.translate.languages;
   }
 
-  usersLoader = () => import('./users/users.module').then(m => m.UsersModule);
-
   changeLanguage(lang: string) {
     this.translate.language = lang;
   }

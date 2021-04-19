@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { TranslateModule } from './translate/translate.module';
+import { LanguageComponent } from './language.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, LanguageComponent],
   imports: [
     BrowserModule,
     ComponentRouterModule.forRoot(),

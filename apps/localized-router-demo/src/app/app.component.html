@@ -7,22 +7,20 @@
   />
   <span>{{ 'app' | translate }}</span>
   <hr />
-  <a linkTo="/home" linkActive="navActive">{{ 'homeTitle' | translate }}</a>
-  <a linkTo="/users" [activeOptions]="{ exact: false }" linkActive="navActive">{{ 'usersTitle' | translate }}</a>
-  <a linkTo="/about" linkActive="navActive">{{ 'aboutTitle' | translate }}</a>
+  <a [linkTo]="'/home' | translateRoute | async" linkActive="navActive">{{ 'homeTitle' | translate }}</a>
+  <a [linkTo]="'/users' | translateRoute | async" [activeOptions]="{ exact: false }" linkActive="navActive">{{ 'usersTitle' | translate }}</a>
+  <a [linkTo]="'/about' | translateRoute | async" linkActive="navActive">{{ 'aboutTitle' | translate }}</a>
   <hr />
-  <button type="button" *ngFor="let language of languages" (click)="changeLanguage(language.code)">{{ language.name }}</button>
+  <!-- <button type="button" *ngFor="let language of languages" (click)="changeLanguage(language.code)">{{ language.name }}</button> -->
+  <a linkTo="/en">EN</a>
+  <a linkTo="/rs">RS</a>
 </header>
 <main>
   <router>
-    <route path="/home" [exact]="true">
-      <demo-home *routeComponent class="content"></demo-home>
+    <route path="/:lang" [exact]="false">
+      <demo-language *routeComponent></demo-language>
     </route>
-    <route path="/users" [exact]="false" [load]="usersLoader"></route>
-    <route path="/about">
-      <demo-about *routeComponent class="content"></demo-about>
-    </route>
-    <route path="/" redirectTo="/home"></route>
+    <route path="/" redirectTo="/en"></route>
   </router>
 </main>
 <!-- Footer -->

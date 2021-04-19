@@ -1,6 +1,6 @@
 <h1>{{ 'userTitle' | translate }}: x</h1>
 
 <ul>
-  <li><a linkTo="profile" linkActive="navActive">{{ 'profileTitle' | translate }} ></a></li>
+  <li><a [linkTo]="'profile' | translateRoute | async" linkActive="navActive">{{ 'profileTitle' | translate }} ></a></li>
   <li><a linkTo=".." linkActive="navActive">< {{ 'usersTitle' | translate }}</a></li>
 </ul>
